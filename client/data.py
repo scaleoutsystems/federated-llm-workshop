@@ -46,7 +46,7 @@ def save_data(out_dir="data"):
     train_datasets = []
     for category in categories:
         filtered_train_ds = dataset["train"].filter(lambda x: x["bio_category"] == category)
-        filtered_train_ds = filtered_train_ds.shuffle(seed=42).select(range(200)) #.select(range(1_000)) # NOTE: 200 for participants, 1_000 for actual model
+        filtered_train_ds = filtered_train_ds.shuffle(seed=42).select(range(150))
         train_datasets.append(filtered_train_ds)
 
     # make dir

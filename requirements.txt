@@ -1,7 +1,9 @@
-accelerate==1.7.0
 datasets==3.6.0
-numpy==2.2.6
 peft==0.15.2
-tokenizers==0.21.1
 torch==2.7.0
 transformers==4.52.4
+evaluate==0.4.3
+trl==0.18.2
+rouge_score==0.1.2
+matplotlib==3.10.3
+fedn==0.30.0

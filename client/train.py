@@ -65,7 +65,6 @@ def train(
     use_cuda = torch.cuda.is_available()
     
     training_args = TrainingArguments(
-        output_dir="qa-finetuned",
         per_device_train_batch_size=batch_size, 
         gradient_accumulation_steps=8,
         num_train_epochs=epochs,
