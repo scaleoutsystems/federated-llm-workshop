@@ -2,9 +2,9 @@ import os
 import torch
 from datasets import load_dataset
 
-
 dir_path = os.path.dirname(os.path.realpath(__file__))
 abs_path = os.path.abspath(dir_path)
+
 
 def load_data(data_path, is_train=True):
     """Load data from disk.
@@ -23,18 +23,13 @@ def load_data(data_path, is_train=True):
     if is_train:
         local_train_dataset = torch.load(data_path, weights_only=False)
         return local_train_dataset
-
-
-def data_split(dataset, num_splits):
-    """Split a Hugging Face Dataset into *num_splits*"""
-    shards = []
-    for i in range(num_splits):
-        shard_i = dataset.shard(num_shards=num_splits, index=i)
-        shards.append(shard_i)
-    return shards
+    
 
 def save_data(out_dir="data"):
+    # load huggingface dataset
     dataset = load_dataset("NIH-CARD/CARDBiomedBench")
+
+    # split dataset into these categories
     categories = [
         "Drug Gene Relations",
         "Pharmacology",
