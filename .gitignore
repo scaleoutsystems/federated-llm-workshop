@@ -2,3 +2,5 @@
 models/
 __pycache__
 trainer_output
+seed.npz
+package.tgz
