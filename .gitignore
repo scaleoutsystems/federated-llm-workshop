@@ -1,6 +1,9 @@
 .venv
-models/
+.scaleout
+models
 __pycache__
 trainer_output
+package
 seed.npz
 package.tgz
+CLAUDE.md
