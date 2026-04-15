@@ -1,4 +1,4 @@
-name: .venv_client
+name: .client_venv
 build_dependencies:
   - pip
   - setuptools
@@ -7,7 +7,7 @@ dependencies:
   - scaleout
   - transformers==4.52.4
   - datasets
-  - peft==0.15.2
-  - trl==0.12.2
+  - peft
+  - trl
   - accelerate          
   - bitsandbytes>=0.43.0; sys_platform == 'linux'

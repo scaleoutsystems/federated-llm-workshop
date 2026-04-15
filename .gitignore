@@ -1,5 +1,6 @@
 .venv
 .scaleout
+data
 models
 __pycache__
 trainer_output
