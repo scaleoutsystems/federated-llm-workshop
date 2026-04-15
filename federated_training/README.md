@@ -27,13 +27,13 @@ Each client trains on a subset of the data samples. Data is stored locally at `c
 
 The client auto-detects hardware and applies the best available training strategy:
 
-| Hardware | Strategy | Base model dtype | LoRA compute dtype |
-|----------|----------|------------------|--------------------|
-| CUDA, Ampere+ (RTX 30xx, A100…) | QLoRA (4-bit NF4) | int4 | bfloat16 |
-| CUDA, older GPU (Turing, Pascal…) | QLoRA (4-bit NF4) | int4 | float16 |
-| CUDA, no bitsandbytes | Plain LoRA | float16 | float16 |
-| Apple Silicon (MPS) | Plain LoRA | float16 | float16 |
-| CPU | Plain LoRA | float32 | float32 |
+| Hardware | Strategy | Base model dtype | LoRA dtype |
+|----------|----------|------------------|------------|
+| CUDA, new hardware | QLoRA (4-bit NF4) | 4-bit NF4 | bfloat16 |
+| CUDA, older hardware | QLoRA (4-bit NF4) | 4-bit NF4 | float16 |
+| CUDA, no bitsandbytes | LoRA | bfloat16 or float16 | bfloat16 or float16 |
+| Apple Silicon (MPS) | LoRA | bfloat16 | bfloat16 |
+| CPU | LoRA | float32 | float32 |
 
 Regardless of local dtype, LoRA adapter weights are always serialized as **float32** before being sent to the server, so FedAvg aggregation is numerically consistent across all client types.
 
