@@ -9,5 +9,5 @@ dependencies:
   - datasets
   - peft==0.15.2
   - trl==0.12.2
-  - accelerate          # required for device_map="auto" in QLoRA path
-  - bitsandbytes>=0.43.0  # multi-backend build; QLoRA active only when CUDA is present
+  - accelerate          
+  - bitsandbytes>=0.43.0; sys_platform == 'linux'

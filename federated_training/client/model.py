@@ -79,7 +79,7 @@ def compile_model():
         # LoRA for CUDA (no bitsandbytes), MPS, or CPU
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
-            torch_dtype=dtype,
+            dtype=dtype,
         )
         if device != "cpu":
             model = model.to(device)
