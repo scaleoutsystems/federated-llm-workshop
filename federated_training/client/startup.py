@@ -96,6 +96,11 @@ class MyClient:
 
         self.client.log_metric({"training_loss": training_output.training_loss})
 
+        # Write metrics for the validate callback to forward to the server
+        metrics = {"training_loss": training_output.training_loss}
+        with open("./metrics.json", "w") as f:
+            json.dump(metrics, f)
+
         metadata = {
             "num_examples": len(train_dataset),
             "batch_size": batch_size,

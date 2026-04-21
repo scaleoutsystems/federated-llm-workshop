@@ -4,6 +4,7 @@ build_dependencies:
   - setuptools
   - wheel
 dependencies:
+  - torch
   - scaleout
   - transformers==4.52.4
   - datasets
