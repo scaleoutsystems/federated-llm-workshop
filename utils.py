@@ -6,9 +6,8 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from rouge_score import rouge_scorer
 from peft import get_peft_model, get_peft_model_state_dict, set_peft_model_state_dict, LoraConfig, TaskType
+from scaleoututil.helpers.helpers import get_helper
 
-
-from fedn.utils.helpers.helpers import get_helper
 
 HELPER_MODULE = "numpyhelper"
 helper = get_helper(HELPER_MODULE)
